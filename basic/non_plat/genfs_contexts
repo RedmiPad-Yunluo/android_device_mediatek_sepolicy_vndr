@@ -44,7 +44,7 @@ genfscon proc /mtk_cmdq_debug/status         u:object_r:proc_cmdq_debug:s0
 genfscon proc /mtk_cmdq_debug/record         u:object_r:proc_cmdq_debug:s0
 genfscon proc /cpuhvfs/dbg_repo              u:object_r:proc_dbg_repo:s0
 genfscon proc /sys/kernel/panic_on_rcu_stall u:object_r:proc_panic_on_rcu_stall:s0
-genfscon proc /sys/vm/dirty_writeback_centisecs u:object_r:proc_dirty:s0
+# Removed duplicate platform procfs label: /sys/vm/dirty_writeback_centisecs
 genfscon proc /sys/kernel/sched_pelt_multiplier u:object_r:proc_sched:s0
 
 # Purpose dump not exit file
@@ -206,7 +206,7 @@ genfscon sysfs /devices/platform/1000d000.pwrap/1000d000.pwrap:main_pmic/mt6397-
 genfscon sysfs /devices/platform/soc/1000d000.pwrap/1000d000.pwrap:main_pmic/mt6397-rtc/rtc                         u:object_r:sysfs_rtc:s0
 genfscon sysfs /devices/platform/10026000.pwrap/10026000.pwrap:mt6359-pmic/mt6359-rtc/rtc                           u:object_r:sysfs_rtc:s0
 genfscon sysfs /devices/platform/10026000.pwrap/10026000.pwrap:mt6359p/mt6359p-rtc/rtc                              u:object_r:sysfs_rtc:s0
-genfscon sysfs /class/typec                                                                                         u:object_r:sysfs_usb_nonplat:s0
+# Use platform sysfs_typec label for /class/typec (genfs 202604 compatibility)
 genfscon sysfs /devices/platform/mt_usb/musb-hdrc/dual_role_usb                                                     u:object_r:sysfs_usb_nonplat:s0
 genfscon sysfs /devices/platform/mt_usb/musb-hdrc/cmode                                                             u:object_r:sysfs_usb_nonplat:s0
 genfscon sysfs /devices/platform/11270000.usb3/musb-hdrc/cmode                                                      u:object_r:sysfs_usb_nonplat:s0
